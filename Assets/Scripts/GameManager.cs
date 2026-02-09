@@ -30,4 +30,21 @@ public class GameManager : MonoBehaviour
         if (scoreText != null)
             scoreText.text = $"Score: {score}";
     }
+
+    private int remainingCoins;
+
+    public void RegisterCoin()
+    {
+        remainingCoins++;
+    }
+
+    public void CoinCollected()
+    {
+        remainingCoins--;
+        if (remainingCoins <= 0)
+        {
+            Debug.Log("WIN!");
+            // sonra UI popup yapacağız
+        }
+    }
 }

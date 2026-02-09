@@ -23,5 +23,7 @@ public class CoinSpawner : MonoBehaviour
         float y = Random.Range(minXY.y, maxXY.y);
 
         Instantiate(coinPrefab, new Vector3(x, y, 0f), Quaternion.identity);
+        GameManager.Instance.RegisterCoin();
+
     }
 }
